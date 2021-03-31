@@ -19,16 +19,17 @@ namespace TaskV3.Business
 
         public async Task<string> AuthenticateAsync(string name, string password)
         {
-            //validate email and password
+            //validate name and password.
             if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(password))
                 return null;
 
+            //check if dealer exists.
             var dealer = await _dealerRepository.GetDealerByNameAsync(name);
 
             if (dealer == null)
                 return null;
 
-            //verify password
+            //verify password.
             if (!_authenticationProvider.VerifyPassword(password, dealer.PasswordHash, dealer.PasswordSalt))
                 return null;
 

@@ -21,6 +21,7 @@ namespace TaskV3.Business
 
         public async Task<int> AddCarAsync(Car car)
         {
+            //check if car exists.
             var existingCar = await _carRepository.GetCarByMakeModelAndYearAsync(car.Make, car.Model, car.Year);
             if (existingCar == null)
             {
@@ -32,12 +33,14 @@ namespace TaskV3.Business
 
         public async Task<bool> RemoveCarAsync(int carId, int dealerId)
         {
+            //check if car exists.
             var car = await _carRepository.GetCarByIdAsync(carId);
             if(car == null)
             {
                 return true;
             }
 
+            //delete the stock from the dealer if car exists
             var stock = await _stockRepository.GetStockAsync(carId, dealerId);
             if(stock == null)
                 return true;
@@ -46,12 +49,14 @@ namespace TaskV3.Business
 
         public async Task<bool> ListCarsAsync(int carId, int amount, int dealerId)
         {
+            //check if car exists
             var car = await _carRepository.GetCarByIdAsync(carId);
             if(car == null)
             {
                 throw new KeyNotFoundException();
             }
 
+            //get stock for the dealer and update accordingly
             var stock = await _stockRepository.GetStockAsync(car.Id, dealerId);
             if (stock == null)
             {
@@ -77,12 +82,14 @@ namespace TaskV3.Business
 
         public async Task<bool> UpdateCarStockAsync(int carId, int amount, int dealerId)
         {
+            //check if car exists.
             var car = await _carRepository.GetCarByIdAsync(carId);
             if(car == null)
             {
                 throw new KeyNotFoundException();
             }
 
+            //get stock for the dealer and update accordingly
             var stock = await _stockRepository.GetStockAsync(car.Id, dealerId);
             if(stock == null)
             {

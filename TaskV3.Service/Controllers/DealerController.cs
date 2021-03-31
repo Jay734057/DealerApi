@@ -21,6 +21,12 @@ namespace TaskV3.Controllers
             _dealerService = dealerService ?? throw new System.ArgumentNullException(nameof(dealerService));
         }
 
+        /// <summary>
+        /// Authenticate the specified name and password
+        /// </summary>
+        /// <returns>Jwt token</returns>
+        /// <param name="name">Name.</param>
+        /// <param name="password">Password.</param>
         [HttpGet]
         public async Task<IActionResult> AuthenticateUser(string name, string password)
         {

@@ -28,6 +28,11 @@ namespace TaskV3.Controllers
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
+        /// <summary>
+        /// Add new car into the DB.
+        /// </summary>
+        /// <returns>Car info</returns>
+        /// <param name="carDto">Car info</param>
         [HttpPost("Add")]
         public async Task<IActionResult> AddCarAsync(CarDto carDto)
         {
@@ -46,6 +51,11 @@ namespace TaskV3.Controllers
             }
         }
 
+        /// <summary>
+        /// Remove existing car stock from the DB.
+        /// </summary>
+        /// <returns>Ok.</returns>
+        /// <param name="carId">Car id</param>
         [HttpDelete("Remove")]
         public async Task<IActionResult> RemoveCarAsync(int carId)
         {
@@ -61,6 +71,12 @@ namespace TaskV3.Controllers
             }
         }
 
+        /// <summary>
+        /// Update car stock in the DB.
+        /// </summary>
+        /// <returns>Ok.</returns>
+        /// <param name="carId">Car id</param>
+        /// <param name="amount">Car stock amount</param>
         [HttpPut("Update")]
         public async Task<IActionResult> UpdateStockAsync(int carId, int amount)
         {
@@ -81,6 +97,12 @@ namespace TaskV3.Controllers
 
         }
 
+        /// <summary>
+        /// List car stock in the DB.
+        /// </summary>
+        /// <returns>Ok.</returns>
+        /// <param name="carId">Car id</param>
+        /// <param name="amount">Car stock amount</param>
         [HttpPost("List")]
         public async Task<IActionResult> ListCarsAsync(int carId, int amount)
         {
@@ -100,6 +122,12 @@ namespace TaskV3.Controllers
             }
         }
 
+        /// <summary>
+        /// Search car stock in the DB.
+        /// </summary>
+        /// <returns>List of cars with stocks</returns>
+        /// <param name="make">Car make</param>
+        /// <param name="model">Car model</param>
         [HttpGet("Search")]
         public async Task<IActionResult> SearchAsync(string make, string model)
         {
