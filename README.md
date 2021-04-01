@@ -1,5 +1,3 @@
-## Memberships and admin credentials for testing
-
 In the web api, no endpoint is provided to create new dealer now and admins. Hence, for testing purposes, some test data is configured.
 
 **test dealer**
