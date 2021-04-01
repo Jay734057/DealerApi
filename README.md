@@ -60,7 +60,7 @@ private static void SeedData(ApiContext context, IAuthenticationProvider authent
 
 ```console
 git clone https://github.com/Jay734057/DealerApi.git
-cd TaskV3
+cd DealerApi
 dotnet restore
 dotnet run --project TaskV3.Service
 ```
