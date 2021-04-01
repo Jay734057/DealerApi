@@ -53,7 +53,8 @@ private static void SeedData(ApiContext context, IAuthenticationProvider authent
 ## To run with docker image
 
 ```console
-
+docker pull jianyu734057/dealerapi
+docker run -it -p [port]:80 jianyu734057/dealerapi
 ```
 
 ## To run with Terminal
