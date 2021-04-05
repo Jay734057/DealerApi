@@ -46,7 +46,7 @@ namespace TaskV3.Controllers
             }
             catch (Exception ex)
             {
-                var result = StatusCode(StatusCodes.Status500InternalServerError, ex);
+                var result = StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
                 return result;
             }
         }
@@ -66,7 +66,7 @@ namespace TaskV3.Controllers
             }
             catch (Exception ex)
             {
-                var result = StatusCode(StatusCodes.Status500InternalServerError, ex);
+                var result = StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
                 return result;
             }
         }
@@ -91,7 +91,7 @@ namespace TaskV3.Controllers
             }
             catch (Exception ex)
             {
-                var result = StatusCode(StatusCodes.Status500InternalServerError, ex);
+                var result = StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
                 return result;
             }
 
@@ -117,7 +117,7 @@ namespace TaskV3.Controllers
             }
             catch (Exception ex)
             {
-                var result = StatusCode(StatusCodes.Status500InternalServerError, ex);
+                var result = StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
                 return result;
             }
         }
@@ -138,7 +138,7 @@ namespace TaskV3.Controllers
             }
             catch (Exception ex)
             {
-                var result = StatusCode(StatusCodes.Status500InternalServerError, ex);
+                var result = StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
                 return result;
             }
         }
